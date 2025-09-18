@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit Note</title></head>
+<body>
+    <h2>Edit Note</h2>
+    <form method="POST">
+        <input type="text" name="title" value="{{ note[1] }}" required><br>
+        <textarea name="content" rows="5" required>{{ note[2] }}</textarea><br>
+        <input type="text" name="tag" value="{{ note[3] }}"><br>
+        <button type="submit">Update</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

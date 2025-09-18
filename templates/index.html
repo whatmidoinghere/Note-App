@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>My Notes</title></head>
+<body>
+
+<h1>Note App</h1>
+    <form method="GET" action="/">
+        <input type="text" name="search" placeholder="Search notes...">
+        <button type="submit">Search</button>
+    </form>
+    <a href="/add">+ Add Note</a>
+    <ul>
+        {% for note in notes %}
+        <li>
+            <strong>{{ note[1] }}</strong> ({{ note[4] }}) [{{ note[3] }}]<br>
+            {{ note[2] }}<br>
+            <a href="/edit/{{ note[0] }}">Edit</a> |
+            <a href="/delete/{{ note[0] }}" onclick="return confirm('Delete this note?')">Delete</a>
+        </li>
+        {% else %}
+        <p>No notes yet.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
